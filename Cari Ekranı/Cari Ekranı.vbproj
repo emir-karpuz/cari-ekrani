@@ -1,0 +1,612 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{674EEFC6-BA54-485C-BF5C-C6209D2EF6D6}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <StartupObject>Cari_Ekranı.My.MyApplication</StartupObject>
+    <RootNamespace>Cari_Ekranı</RootNamespace>
+    <AssemblyName>Cari Ekranı</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>WindowsForms</MyType>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>Cari Ekranı.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>Cari Ekranı.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Resources\313-search.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.1016.290\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows.Forms" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+    <Import Include="System.Threading.Tasks" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="frmAnaMenu.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAnaMenu.Designer.vb">
+      <DependentUpon>frmAnaMenu.vb</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCariGirisi.Designer.vb">
+      <DependentUpon>frmCariGirisi.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmCariGirisi.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmHakkinda.Designer.vb">
+      <DependentUpon>frmHakkinda.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmHakkinda.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmGridView.Designer.vb">
+      <DependentUpon>frmGridView.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmGridView.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MegaData_TESTDataSet.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MegaData_TESTDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="SQLQuery.vb" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="frmAnaMenu.resx">
+      <DependentUpon>frmAnaMenu.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCariGirisi.resx">
+      <DependentUpon>frmCariGirisi.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmHakkinda.resx">
+      <DependentUpon>frmHakkinda.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmGridView.resx">
+      <DependentUpon>frmGridView.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.manifest" />
+    <None Include="MegaData_TESTDataSet.xsc">
+      <DependentUpon>MegaData_TESTDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="MegaData_TESTDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>MegaData_TESTDataSet.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="MegaData_TESTDataSet.xss">
+      <DependentUpon>MegaData_TESTDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\001-unlocked.png" />
+    <Content Include="Resources\002-video player.png" />
+    <Content Include="Resources\003-video player.png" />
+    <Content Include="Resources\004-picture.png" />
+    <Content Include="Resources\005-picture.png" />
+    <Content Include="Resources\006-video player.png" />
+    <Content Include="Resources\007-television.png" />
+    <Content Include="Resources\008-film.png" />
+    <Content Include="Resources\009-photo camera.png" />
+    <Content Include="Resources\010-record.png" />
+    <Content Include="Resources\011-photo camera.png" />
+    <Content Include="Resources\012-video camera.png" />
+    <Content Include="Resources\013-music player.png" />
+    <Content Include="Resources\014-music player.png" />
+    <Content Include="Resources\015-video camera.png" />
+    <Content Include="Resources\016-music player.png" />
+    <Content Include="Resources\017-compact disc.png" />
+    <Content Include="Resources\018-compact disc.png" />
+    <Content Include="Resources\019-compact disc.png" />
+    <Content Include="Resources\020-music player.png" />
+    <Content Include="Resources\021-view.png" />
+    <Content Include="Resources\022-save.ico" />
+    <Content Include="Resources\022-save.png" />
+    <Content Include="Resources\023-next.png" />
+    <Content Include="Resources\024-back.png" />
+    <Content Include="Resources\025-play button.png" />
+    <Content Include="Resources\026-stop.png" />
+    <Content Include="Resources\027-pause.png" />
+    <Content Include="Resources\028-fast forward.png" />
+    <Content Include="Resources\029-rewind.png" />
+    <Content Include="Resources\030-eject.png" />
+    <Content Include="Resources\031-shuffle.png" />
+    <Content Include="Resources\032-hide.png" />
+    <Content Include="Resources\033-repeat.png" />
+    <Content Include="Resources\034-skip.png" />
+    <Content Include="Resources\035-previous.png" />
+    <Content Include="Resources\036-play button.png" />
+    <Content Include="Resources\037-stop.png" />
+    <Content Include="Resources\038-pause.png" />
+    <Content Include="Resources\039-fast forward.png" />
+    <Content Include="Resources\040-rewind.png" />
+    <Content Include="Resources\041-eject.png" />
+    <Content Include="Resources\042-shuffle.png" />
+    <Content Include="Resources\043-view.png" />
+    <Content Include="Resources\044-repeat.png" />
+    <Content Include="Resources\045-speaker.png" />
+    <Content Include="Resources\046-speaker.png" />
+    <Content Include="Resources\047-speaker.png" />
+    <Content Include="Resources\048-speaker.png" />
+    <Content Include="Resources\049-mute.png" />
+    <Content Include="Resources\050-speaker.png" />
+    <Content Include="Resources\051-speaker.png" />
+    <Content Include="Resources\052-speaker.png" />
+    <Content Include="Resources\053-speaker.png" />
+    <Content Include="Resources\054-view.png" />
+    <Content Include="Resources\055-speaker.png" />
+    <Content Include="Resources\056-plus.png" />
+    <Content Include="Resources\057-minus.png" />
+    <None Include="Resources\058-error1.ico" />
+    <Content Include="SqlServerTypes\Loader.cs" />
+    <Content Include="SqlServerTypes\readme.htm" />
+    <Content Include="SqlServerTypes\x64\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <None Include="packages.config" />
+    <None Include="Resources\058-error.ico" />
+    <Content Include="Resources\058-error.png" />
+    <Content Include="Resources\059-success.png" />
+    <Content Include="Resources\060-warning.png" />
+    <Content Include="Resources\061-info.png" />
+    <Content Include="Resources\062-forbidden.png" />
+    <Content Include="Resources\063-shutdown.png" />
+    <Content Include="Resources\064-restart.png" />
+    <Content Include="Resources\065-perspective.png" />
+    <Content Include="Resources\066-power.png" />
+    <Content Include="Resources\067-add.png" />
+    <Content Include="Resources\068-substract.png" />
+    <Content Include="Resources\069-multiply.png" />
+    <Content Include="Resources\070-divide.png" />
+    <Content Include="Resources\071-equal.png" />
+    <Content Include="Resources\072-percent.png" />
+    <Content Include="Resources\073-add.png" />
+    <Content Include="Resources\074-minus.png" />
+    <Content Include="Resources\075-equal.png" />
+    <Content Include="Resources\076-focus.png" />
+    <Content Include="Resources\077-division.png" />
+    <Content Include="Resources\078-magic wand.png" />
+    <Content Include="Resources\079-calculator.png" />
+    <Content Include="Resources\080-calculator.png" />
+    <Content Include="Resources\081-checked.png" />
+    <Content Include="Resources\082-add.png" />
+    <Content Include="Resources\083-substract.png" />
+    <Content Include="Resources\084-multiply.png" />
+    <Content Include="Resources\085-divide.png" />
+    <Content Include="Resources\086-equal.png" />
+    <Content Include="Resources\087-menu.png" />
+    <Content Include="Resources\088-percent.png" />
+    <Content Include="Resources\089-share.png" />
+    <Content Include="Resources\090-share.png" />
+    <Content Include="Resources\091-share.png" />
+    <Content Include="Resources\092-network.png" />
+    <Content Include="Resources\093-binoculars.png" />
+    <Content Include="Resources\094-checked.png" />
+    <Content Include="Resources\095-download.png" />
+    <Content Include="Resources\096-upload.png" />
+    <Content Include="Resources\097-send.png" />
+    <Content Include="Resources\098-menu.png" />
+    <Content Include="Resources\099-incoming.png" />
+    <Content Include="Resources\100-like.png" />
+    <Content Include="Resources\101-dislike.png" />
+    <Content Include="Resources\102-infinity.png" />
+    <Content Include="Resources\103-wireless internet.png" />
+    <Content Include="Resources\104-wifi.png" />
+    <Content Include="Resources\105-photos.png" />
+    <Content Include="Resources\106-wifi.png" />
+    <Content Include="Resources\107-megaphone.png" />
+    <Content Include="Resources\108-megaphone.png" />
+    <Content Include="Resources\109-menu.png" />
+    <Content Include="Resources\110-zoom in.png" />
+    <Content Include="Resources\111-idea.png" />
+    <Content Include="Resources\112-server.png" />
+    <Content Include="Resources\113-server.png" />
+    <Content Include="Resources\114-server.png" />
+    <Content Include="Resources\115-server.png" />
+    <Content Include="Resources\116-database.png" />
+    <Content Include="Resources\117-database.png" />
+    <Content Include="Resources\118-database.png" />
+    <Content Include="Resources\119-database.png" />
+    <Content Include="Resources\120-cloud.png" />
+    <Content Include="Resources\121-menu.png" />
+    <Content Include="Resources\122-cloud computing.png" />
+    <Content Include="Resources\123-cloud computing.png" />
+    <Content Include="Resources\124-cloud computing.png" />
+    <Content Include="Resources\125-cloud computing.png" />
+    <Content Include="Resources\126-cloud computing.png" />
+    <Content Include="Resources\127-cloud computing.png" />
+    <Content Include="Resources\128-like.png" />
+    <Content Include="Resources\129-dislike.png" />
+    <Content Include="Resources\130-like.png" />
+    <Content Include="Resources\131-star.png" />
+    <Content Include="Resources\132-tabs.png" />
+    <Content Include="Resources\133-star.png" />
+    <Content Include="Resources\134-map.png" />
+    <Content Include="Resources\135-map.png" />
+    <Content Include="Resources\136-map.png" />
+    <Content Include="Resources\137-placeholder.png" />
+    <Content Include="Resources\138-placeholder.png" />
+    <Content Include="Resources\139-placeholder.png" />
+    <Content Include="Resources\140-internet.png" />
+    <Content Include="Resources\141-radar.png" />
+    <Content Include="Resources\142-target.png" />
+    <Content Include="Resources\143-windows.png" />
+    <Content Include="Resources\144-television.png" />
+    <Content Include="Resources\145-hourglass.png" />
+    <Content Include="Resources\146-hourglass.png" />
+    <Content Include="Resources\147-hourglass.png" />
+    <Content Include="Resources\148-hourglass.png" />
+    <Content Include="Resources\149-id card.png" />
+    <Content Include="Resources\150-id card.png" />
+    <Content Include="Resources\151-id card.png" />
+    <Content Include="Resources\152-id card.png" />
+    <Content Include="Resources\153-id card.png" />
+    <Content Include="Resources\154-windows.png" />
+    <Content Include="Resources\155-id card.png" />
+    <Content Include="Resources\156-battery.png" />
+    <Content Include="Resources\157-battery.png" />
+    <Content Include="Resources\158-battery.png" />
+    <Content Include="Resources\159-battery.png" />
+    <Content Include="Resources\160-battery.png" />
+    <Content Include="Resources\161-battery.png" />
+    <Content Include="Resources\162-battery.png" />
+    <Content Include="Resources\163-battery.png" />
+    <Content Include="Resources\164-battery.png" />
+    <Content Include="Resources\165-layers.png" />
+    <Content Include="Resources\166-battery.png" />
+    <Content Include="Resources\167-command.png" />
+    <Content Include="Resources\168-compose.png" />
+    <Content Include="Resources\169-reading.png" />
+    <Content Include="Resources\170-flag.png" />
+    <Content Include="Resources\171-flag.png" />
+    <Content Include="Resources\172-flag.png" />
+    <Content Include="Resources\173-flag.png" />
+    <Content Include="Resources\174-flag.png" />
+    <Content Include="Resources\175-bookmark.png" />
+    <Content Include="Resources\176-windows.png" />
+    <Content Include="Resources\177-agenda.png" />
+    <Content Include="Resources\178-controls.png" />
+    <Content Include="Resources\179-controls.png" />
+    <Content Include="Resources\180-controls.png" />
+    <Content Include="Resources\181-controls.png" />
+    <Content Include="Resources\182-controls.png" />
+    <Content Include="Resources\183-controls.png" />
+    <Content Include="Resources\184-controls.png" />
+    <Content Include="Resources\185-controls.png" />
+    <Content Include="Resources\186-controls.png" />
+    <Content Include="Resources\187-tabs.png" />
+    <Content Include="Resources\188-controls.png" />
+    <Content Include="Resources\189-umbrella.png" />
+    <Content Include="Resources\190-help.png" />
+    <Content Include="Resources\191-magnet.png" />
+    <Content Include="Resources\192-magnet.png" />
+    <Content Include="Resources\193-magnet.png" />
+    <Content Include="Resources\194-fingerprint.png" />
+    <Content Include="Resources\195-attachment.png" />
+    <Content Include="Resources\196-hold.png" />
+    <Content Include="Resources\197-diamond.png" />
+    <Content Include="Resources\198-windows.png" />
+    <Content Include="Resources\199-push pin.png" />
+    <Content Include="Resources\200-settings.png" />
+    <Content Include="Resources\201-settings.png" />
+    <Content Include="Resources\202-settings.png" />
+    <Content Include="Resources\203-settings.png" />
+    <Content Include="Resources\204-settings.png" />
+    <Content Include="Resources\205-settings.png" />
+    <Content Include="Resources\206-settings.png" />
+    <Content Include="Resources\207-settings.png" />
+    <Content Include="Resources\208-settings.png" />
+    <Content Include="Resources\209-windows.png" />
+    <Content Include="Resources\210-settings.png" />
+    <Content Include="Resources\211-gift.png" />
+    <Content Include="Resources\212-alarm.png" />
+    <Content Include="Resources\213-alarm.png" />
+    <Content Include="Resources\214-worldwide.png" />
+    <Content Include="Resources\215-funnel.png" />
+    <Content Include="Resources\216-key.png" />
+    <Content Include="Resources\217-worldwide.png" />
+    <Content Include="Resources\218-edit.png" />
+    <Content Include="Resources\219-fax.png" />
+    <Content Include="Resources\220-layers.png" />
+    <Content Include="Resources\221-zoom out.png" />
+    <Content Include="Resources\222-print.png" />
+    <Content Include="Resources\223-clock.png" />
+    <Content Include="Resources\224-clock.png" />
+    <Content Include="Resources\225-alarm clock.png" />
+    <Content Include="Resources\226-alarm clock.png" />
+    <Content Include="Resources\227-time.png" />
+    <Content Include="Resources\228-stopwatch.png" />
+    <Content Include="Resources\229-stopwatch.png" />
+    <Content Include="Resources\230-stopwatch.png" />
+    <Content Include="Resources\231-stopwatch.png" />
+    <Content Include="Resources\232-albums.png" />
+    <Content Include="Resources\233-stopwatch.png" />
+    <Content Include="Resources\234-folder.png" />
+    <Content Include="Resources\235-folder.png" />
+    <Content Include="Resources\236-folder.png" />
+    <Content Include="Resources\237-folder.png" />
+    <Content Include="Resources\238-folder.png" />
+    <Content Include="Resources\239-folder.png" />
+    <Content Include="Resources\240-folder.png" />
+    <Content Include="Resources\241-folder.png" />
+    <Content Include="Resources\242-folder.png" />
+    <Content Include="Resources\243-garbage.png" />
+    <Content Include="Resources\244-folder.png" />
+    <Content Include="Resources\245-folder.png" />
+    <Content Include="Resources\246-folder.png" />
+    <Content Include="Resources\247-folder.png" />
+    <Content Include="Resources\248-folder.png" />
+    <Content Include="Resources\249-folder.png" />
+    <Content Include="Resources\250-folder.png" />
+    <Content Include="Resources\251-folder.png" />
+    <Content Include="Resources\252-folder.png" />
+    <Content Include="Resources\253-folder.png" />
+    <Content Include="Resources\254-garbage.png" />
+    <Content Include="Resources\255-folder.png" />
+    <Content Include="Resources\256-file.png" />
+    <Content Include="Resources\257-file.png" />
+    <Content Include="Resources\258-list.png" />
+    <Content Include="Resources\259-document.png" />
+    <Content Include="Resources\260-resume.png" />
+    <Content Include="Resources\261-diploma.png" />
+    <Content Include="Resources\262-file.png" />
+    <Content Include="Resources\263-notepad.png" />
+    <Content Include="Resources\264-notepad.png" />
+    <Content Include="Resources\265-garbage.png" />
+    <Content Include="Resources\266-notepad.png" />
+    <Content Include="Resources\267-note.png" />
+    <Content Include="Resources\268-calendar.png" />
+    <Content Include="Resources\269-calendar.png" />
+    <Content Include="Resources\270-calendar.png" />
+    <Content Include="Resources\271-calendar.png" />
+    <Content Include="Resources\272-blueprint.png" />
+    <Content Include="Resources\273-calendar.png" />
+    <Content Include="Resources\274-calendar.png" />
+    <Content Include="Resources\275-bookmark.png" />
+    <Content Include="Resources\276-trash.png" />
+    <Content Include="Resources\277-newspaper.png" />
+    <Content Include="Resources\278-list.png" />
+    <Content Include="Resources\279-edit.png" />
+    <Content Include="Resources\280-notebook.png" />
+    <Content Include="Resources\281-notebook.png" />
+    <Content Include="Resources\282-notebook.png" />
+    <Content Include="Resources\283-notebook.ico" />
+    <Content Include="Resources\283-notebook.png" />
+    <Content Include="Resources\284-notebook.png" />
+    <Content Include="Resources\285-notebook.png" />
+    <Content Include="Resources\286-calendar.png" />
+    <Content Include="Resources\287-link.png" />
+    <Content Include="Resources\288-calendar.png" />
+    <Content Include="Resources\289-smartphone.png" />
+    <Content Include="Resources\290-smartphone.png" />
+    <Content Include="Resources\291-smartphone.png" />
+    <Content Include="Resources\292-smartphone.png" />
+    <Content Include="Resources\293-smartphone.png" />
+    <Content Include="Resources\294-smartphone.png" />
+    <Content Include="Resources\295-smartphone.png" />
+    <Content Include="Resources\296-smartphone.png" />
+    <Content Include="Resources\297-smartphone.png" />
+    <Content Include="Resources\298-unlink.png" />
+    <Content Include="Resources\299-smartphone.png" />
+    <Content Include="Resources\300-smartphone.png" />
+    <Content Include="Resources\301-smartphone.png" />
+    <Content Include="Resources\302-spotlight.png" />
+    <Content Include="Resources\303-lamp.png" />
+    <Content Include="Resources\304-archive.png" />
+    <Content Include="Resources\305-archive.png" />
+    <Content Include="Resources\306-archive.png" />
+    <Content Include="Resources\307-archive.png" />
+    <Content Include="Resources\308-price tag.png" />
+    <Content Include="Resources\309-broken link.png" />
+    <Content Include="Resources\310-briefcase.png" />
+    <Content Include="Resources\311-app.png" />
+    <Content Include="Resources\312-notification.png" />
+    <Content Include="Resources\313-search.ico" />
+    <Content Include="Resources\313-search.png" />
+    <Content Include="Resources\313-search1.ico" />
+    <Content Include="Resources\314-menu.png" />
+    <Content Include="Resources\315-more.png" />
+    <Content Include="Resources\316-more.png" />
+    <Content Include="Resources\317-bluetooth.png" />
+    <Content Include="Resources\318-bluetooth.png" />
+    <Content Include="Resources\319-exit.png" />
+    <Content Include="Resources\320-login.png" />
+    <Content Include="Resources\321-exit.ico" />
+    <Content Include="Resources\321-exit.png" />
+    <Content Include="Resources\322-exit.png" />
+    <Content Include="Resources\323-add.png" />
+    <Content Include="Resources\324-search.png" />
+    <Content Include="Resources\325-close.png" />
+    <Content Include="Resources\326-switch.png" />
+    <Content Include="Resources\327-switch.png" />
+    <Content Include="Resources\328-switch.png" />
+    <Content Include="Resources\329-switch.png" />
+    <Content Include="Resources\330-volume control.png" />
+    <Content Include="Resources\331-volume control.png" />
+    <Content Include="Resources\332-switch.png" />
+    <Content Include="Resources\333-switch.png" />
+    <Content Include="Resources\334-switch.png" />
+    <Content Include="Resources\335-home.png" />
+    <Content Include="Resources\336-switch.png" />
+    <Content Include="Resources\337-lock.png" />
+    <Content Include="Resources\338-lock.png" />
+    <Content Include="Resources\339-microphone.png" />
+    <Content Include="Resources\340-muted.png" />
+    <Content Include="Resources\341-microphone.png" />
+    <Content Include="Resources\342-navigation.png" />
+    <Content Include="Resources\343-navigation.png" />
+    <Content Include="Resources\344-compass.png" />
+    <Content Include="Resources\345-more.png" />
+    <Content Include="Resources\346-home.png" />
+    <Content Include="Resources\347-route.png" />
+    <Content Include="Resources\348-street.png" />
+    <Content Include="Resources\349-street.png" />
+    <Content Include="Resources\350-sign.png" />
+    <Content Include="Resources\351-sign.png" />
+    <Content Include="Resources\352-pin.png" />
+    <Content Include="Resources\353-placeholder.png" />
+    <Content Include="Resources\354-map location.png" />
+    <Content Include="Resources\355-placeholders.png" />
+    <Content Include="Resources\356-paper plane.png" />
+    <Content Include="Resources\357-home.png" />
+    <Content Include="Resources\358-paper plane.png" />
+    <Content Include="Resources\359-users.png" />
+    <Content Include="Resources\360-users.png" />
+    <Content Include="Resources\361-user.png" />
+    <Content Include="Resources\362-user.png" />
+    <Content Include="Resources\363-user.png" />
+    <Content Include="Resources\364-user.png" />
+    <Content Include="Resources\365-user.png" />
+    <Content Include="Resources\366-user.png" />
+    <Content Include="Resources\367-user.png" />
+    <Content Include="Resources\368-house.png" />
+    <Content Include="Resources\369-user.png" />
+    <Content Include="Resources\370-locked.png" />
+    <Content Include="Resources\371-locked.png" />
+    <Content Include="Resources\372-locked.png" />
+    <Content Include="Resources\373-locked.png" />
+    <Content Include="Resources\374-locked.png" />
+    <Content Include="Resources\375-unlocked.png" />
+    <Content Include="Resources\376-locked.png" />
+    <Content Include="Resources\377-unlocked.png" />
+    <Content Include="Resources\378-locked.png" />
+    <Content Include="Resources\379-eyeglasses.png" />
+    <Content Include="Resources\cool-background.png" />
+    <None Include="Resources\mega yazılım logo.png" />
+    <Content Include="Resources\Pacific Dream.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.6.1">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.6.1 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+</Project>
