@@ -4,7 +4,7 @@
     Dim frmCari As New frmCariGirisi
 
     Private Sub frmGridView_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        dgvKayitListesi.DataSource = SQLQuery.cmdMaker("SELECT * FROM CarAna(NOLOCK)")
+        dgvKayitListesi.DataSource = SQLQuery.cmdDataTable("SELECT * FROM CarAna(NOLOCK)")
     End Sub
 
     Private Sub dgvKayitListesi_DoubleClick(sender As Object, e As EventArgs) Handles dgvKayitListesi.DoubleClick

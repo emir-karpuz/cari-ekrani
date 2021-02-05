@@ -6,9 +6,8 @@ Public Class SQLQuery
 
     Shared connection As New SqlConnection(connectionString)
 
-    Public Shared Function cmdMaker(str As String) As DataTable
+    Public Shared Function cmdDataTable(str As String) As DataTable
 
-        Dim sqlCommand As New SqlCommand(str, connection)
         Dim dataTable As New DataTable
         Dim sqlDataAdapter As New SqlDataAdapter(str, connection)
 
@@ -17,16 +16,17 @@ Public Class SQLQuery
                 connection.Open()
             End If
             sqlDataAdapter.Fill(dataTable)
-            sqlCommand.Dispose()
             Return dataTable
         Catch ex As Exception
             MessageBox.Show(ex.Message, "Error")
         End Try
+
         connection.Close()
+
         Return Nothing
     End Function
 
-    Public Shared Function cmd(str As String)
+    Public Shared Function cmdFirstData(str As String)
         Dim sqlCommand As New SqlCommand(str, connection)
 
         Try

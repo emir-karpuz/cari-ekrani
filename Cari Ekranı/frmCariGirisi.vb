@@ -6,24 +6,29 @@
 
     Private Sub btnKaydet_Click(sender As Object, e As EventArgs) Handles btnKaydet.Click
         'TO DO: EĞER KAYIT VARSA UPDATE İŞLEMİ YAPILACAK YOKSA YENİ KAYIT OLUŞTURULACAK
-        Dim recordID As Integer = CInt(SQLQuery.cmd("SELECT Kod FROM CarAna WHERE Kod = '" & txtKod.Text & "'"))
+        Dim recordID As Integer = SQLQuery.cmdFirstData("SELECT Kod FROM CarAna WHERE Kod = '" & txtKod.Text & "'")
+
+        If cmbSehir.Text = "İL SEÇİNİZ" Then    'MegaSehir Tablosunda
+            cmbSehir.Text = String.Empty
+        End If
 
         If txtKod.Text <> "" Then
             If recordID = 0 Then
                 Try
-                    SQLQuery.cmdMaker("INSERT INTO CarAna (Kod, Ad, Adres, Semt, Sehir, PostaKodu, KapiNo, Ulke, Telefon, Fax, CepTelefon,
+                    SQLQuery.cmdDataTable("INSERT INTO CarAna (Kod, Ad, Adres, Semt, Sehir, PostaKodu, KapiNo, Ulke, Telefon, Fax, CepTelefon,
                                         VerDar, VerNo, OdemeNotu, MuhHesKodu, TcKimlikNo, BankaHesapNo, IbanNo, BankaKodu, SubeKodu)
                             VALUES('" & txtKod.Text & "', '" & txtAd.Text & "', '" & txtAdres.Text & "', '" & txtSemt.Text & "', '" & cmbSehir.Text & "',
                                    '" & txtPostaKodu.Text & "', '" & txtKapiNo.Text & "', '" & txtUlke.Text & "', '" & txtTelefon.Text & "', '" & txtFax.Text & "',
                                    '" & txtCepNo.Text & "', '" & txtVergiDaire.Text & "', '" & txtVergiNo.Text & "', '" & txtOdemeNotu.Text & "', '" & txtMuhHesapNo.Text & "',
                                    '" & txtTC.Text & "', '" & txtHesapNo.Text & "', '" & txtIBAN.Text & "', '" & txtBankaKodu.Text & "', '" & txtSubeKodu.Text & "')")
                     MessageBox.Show("Kayıt başarıyla oluşturuldu.", "Info")
+                    ClearTextBox(Me)
                 Catch ex As Exception
                     MessageBox.Show("Hata oluştu: " & ex.Message & Environment.NewLine & ex.StackTrace, "Error")
                 End Try
             Else
                 Try
-                    SQLQuery.cmdMaker("UPDATE CarAna SET Ad = '" & txtAd.Text & "',
+                    SQLQuery.cmdDataTable("UPDATE CarAna SET Ad = '" & txtAd.Text & "',
                                                      Adres = '" & txtAdres.Text & "',
                                                      Semt = '" & txtSemt.Text & "',
                                                      Sehir = '" & cmbSehir.Text & "',
@@ -45,6 +50,7 @@
                                                      WHERE Kod = '" & txtKod.Text & "'")
 
                     MessageBox.Show("Kayıt başarıyla güncellendi.", "Info")
+                    ClearTextBox(Me)
                 Catch ex As Exception
                     MessageBox.Show("Hata oluştu: " & ex.Message & Environment.NewLine & ex.StackTrace, "Error")
                 End Try
@@ -62,7 +68,7 @@
         frmGridView.ShowDialog()
 
         If frmGridView.row.Index <> -1 Then
-            txtKod.Text = frmGridView.row.Cells(1).Value.ToString       'Otomatikleştirilecek
+            txtKod.Text = frmGridView.row.Cells(1).Value.ToString       'Otomatikleştirilecek SELECT'i Id'ye göre çektirip txtBox'lara yerleştirilecek
             txtAd.Text = frmGridView.row.Cells(3).Value.ToString
             txtAdres.Text = frmGridView.row.Cells(4).Value.ToString
             txtSemt.Text = frmGridView.row.Cells(5).Value.ToString
@@ -87,7 +93,7 @@
 
     Private Sub btnSil_Click(sender As Object, e As EventArgs) Handles btnSil.Click
         Try
-            SQLQuery.cmdMaker("DELETE FROM CarAna WHERE Kod = '" & txtKod.Text & "'")
+            SQLQuery.cmdDataTable("DELETE FROM CarAna WHERE Kod = '" & txtKod.Text & "'")
             MessageBox.Show("Silme işlemi başarıyla tamamlandı", "Info")
             ClearTextBox(Me)
         Catch ex As Exception
@@ -108,4 +114,19 @@
         Next ctrl
     End Sub
 
+    Private Sub frmCariGirisi_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        dgwKayitlar.DataSource = SQLQuery.cmdDataTable("SELECT Kod, Ad, Adres, Semt, PostaKodu, KapiNo, Sehir, Ulke FROM CarAna(NOLOCK)")
+    End Sub
+
+    Private Sub dgwKayitlar_DoubleClick(sender As Object, e As EventArgs) Handles dgwKayitlar.DoubleClick
+        txtKod.Text = dgwKayitlar.CurrentRow.Cells(0).Value.ToString
+        txtAd.Text = dgwKayitlar.CurrentRow.Cells(1).Value.ToString
+        txtAdres.Text = dgwKayitlar.CurrentRow.Cells(2).Value.ToString
+        txtSemt.Text = dgwKayitlar.CurrentRow.Cells(3).Value.ToString
+        txtPostaKodu.Text = dgwKayitlar.CurrentRow.Cells(4).Value.ToString
+        txtKapiNo.Text = dgwKayitlar.CurrentRow.Cells(5).Value.ToString
+        cmbSehir.Text = dgwKayitlar.CurrentRow.Cells(6).Value.ToString
+        txtUlke.Text = dgwKayitlar.CurrentRow.Cells(7).Value.ToString
+        tcCariAnaBilgi.SelectedTab = tpDetay
+    End Sub
 End Class
