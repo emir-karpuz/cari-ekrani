@@ -2,9 +2,11 @@
 
 Public Class SQLQuery
 
+    Shared alternativeConnection As String = "Data Source=ASUS-FX553;Initial Catalog=MegaData_TEST;Integrated Security=True;Persist Security Info=True"
+
     Shared connectionString As String = "Data Source=YAZILIM4\MEGA;Initial Catalog=MegaData_TEST;Integrated Security=True;Persist Security Info=True;User ID=sa"
 
-    Shared connection As New SqlConnection(connectionString)
+    Shared connection As New SqlConnection(alternativeConnection)
 
     Public Shared Function cmdDataTable(str As String) As DataTable
 

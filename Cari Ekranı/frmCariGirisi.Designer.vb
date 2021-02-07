@@ -25,7 +25,7 @@ Partial Class frmCariGirisi
         Me.tcCariAnaBilgi = New System.Windows.Forms.TabControl()
         Me.tpListe = New System.Windows.Forms.TabPage()
         Me.gbDetay = New System.Windows.Forms.GroupBox()
-        Me.dgwKayitlar = New System.Windows.Forms.DataGridView()
+        Me.dgvKayitlar = New System.Windows.Forms.DataGridView()
         Me.tpDetay = New System.Windows.Forms.TabPage()
         Me.gbIletisim = New System.Windows.Forms.GroupBox()
         Me.lblCepNo = New System.Windows.Forms.Label()
@@ -80,7 +80,7 @@ Partial Class frmCariGirisi
         Me.tcCariAnaBilgi.SuspendLayout()
         Me.tpListe.SuspendLayout()
         Me.gbDetay.SuspendLayout()
-        CType(Me.dgwKayitlar, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dgvKayitlar, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.tpDetay.SuspendLayout()
         Me.gbIletisim.SuspendLayout()
         Me.gbOdmBilg1.SuspendLayout()
@@ -90,7 +90,7 @@ Partial Class frmCariGirisi
         '
         Me.tcCariAnaBilgi.Controls.Add(Me.tpListe)
         Me.tcCariAnaBilgi.Controls.Add(Me.tpDetay)
-        Me.tcCariAnaBilgi.Font = New System.Drawing.Font("Arial", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(162, Byte))
+        Me.tcCariAnaBilgi.Font = New System.Drawing.Font("Arial", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(162, Byte))
         Me.tcCariAnaBilgi.Location = New System.Drawing.Point(12, 76)
         Me.tcCariAnaBilgi.Name = "tcCariAnaBilgi"
         Me.tcCariAnaBilgi.SelectedIndex = 0
@@ -101,17 +101,17 @@ Partial Class frmCariGirisi
         '
         Me.tpListe.BackColor = System.Drawing.Color.White
         Me.tpListe.Controls.Add(Me.gbDetay)
-        Me.tpListe.Location = New System.Drawing.Point(4, 27)
+        Me.tpListe.Location = New System.Drawing.Point(4, 26)
         Me.tpListe.Name = "tpListe"
         Me.tpListe.Padding = New System.Windows.Forms.Padding(3)
-        Me.tpListe.Size = New System.Drawing.Size(640, 558)
+        Me.tpListe.Size = New System.Drawing.Size(640, 559)
         Me.tpListe.TabIndex = 0
         Me.tpListe.Text = "Liste"
         '
         'gbDetay
         '
         Me.gbDetay.BackColor = System.Drawing.Color.LightCyan
-        Me.gbDetay.Controls.Add(Me.dgwKayitlar)
+        Me.gbDetay.Controls.Add(Me.dgvKayitlar)
         Me.gbDetay.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(162, Byte))
         Me.gbDetay.Location = New System.Drawing.Point(9, 6)
         Me.gbDetay.Name = "gbDetay"
@@ -120,17 +120,17 @@ Partial Class frmCariGirisi
         Me.gbDetay.TabStop = False
         Me.gbDetay.Text = "Kayıtlar"
         '
-        'dgwKayitlar
+        'dgvKayitlar
         '
-        Me.dgwKayitlar.AllowUserToAddRows = False
-        Me.dgwKayitlar.AllowUserToDeleteRows = False
-        Me.dgwKayitlar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgwKayitlar.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.dgwKayitlar.Location = New System.Drawing.Point(3, 16)
-        Me.dgwKayitlar.Name = "dgwKayitlar"
-        Me.dgwKayitlar.ReadOnly = True
-        Me.dgwKayitlar.Size = New System.Drawing.Size(622, 528)
-        Me.dgwKayitlar.TabIndex = 0
+        Me.dgvKayitlar.AllowUserToAddRows = False
+        Me.dgvKayitlar.AllowUserToDeleteRows = False
+        Me.dgvKayitlar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgvKayitlar.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.dgvKayitlar.Location = New System.Drawing.Point(3, 16)
+        Me.dgvKayitlar.Name = "dgvKayitlar"
+        Me.dgvKayitlar.ReadOnly = True
+        Me.dgvKayitlar.Size = New System.Drawing.Size(622, 528)
+        Me.dgvKayitlar.TabIndex = 0
         '
         'tpDetay
         '
@@ -723,7 +723,7 @@ Partial Class frmCariGirisi
         Me.tcCariAnaBilgi.ResumeLayout(False)
         Me.tpListe.ResumeLayout(False)
         Me.gbDetay.ResumeLayout(False)
-        CType(Me.dgwKayitlar, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dgvKayitlar, System.ComponentModel.ISupportInitialize).EndInit()
         Me.tpDetay.ResumeLayout(False)
         Me.gbIletisim.ResumeLayout(False)
         Me.gbIletisim.PerformLayout()
@@ -769,7 +769,7 @@ Partial Class frmCariGirisi
     Friend WithEvents btnGetir As Button
     Friend WithEvents btnSil As Button
     Friend WithEvents gbDetay As GroupBox
-    Friend WithEvents dgwKayitlar As DataGridView
+    Friend WithEvents dgvKayitlar As DataGridView
     Friend WithEvents gbIletisim As GroupBox
     Friend WithEvents lblCepNo As Label
     Friend WithEvents txtCepNo As TextBox

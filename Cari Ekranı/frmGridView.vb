@@ -1,10 +1,10 @@
 ﻿Public Class frmGridView
 
     Public row As New DataGridViewRow
-    Dim frmCari As New frmCariGirisi
+    Public tablo As String
 
     Private Sub frmGridView_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        dgvKayitListesi.DataSource = SQLQuery.cmdDataTable("SELECT * FROM CarAna(NOLOCK)")
+        dgvKayitListesi.DataSource = SQLQuery.cmdDataTable("SELECT * FROM " & tablo & "(NOLOCK)")
     End Sub
 
     Private Sub dgvKayitListesi_DoubleClick(sender As Object, e As EventArgs) Handles dgvKayitListesi.DoubleClick

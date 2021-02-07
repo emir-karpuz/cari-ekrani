@@ -27,15 +27,14 @@ Partial Class frmTahsilat
         Me.tpListe = New System.Windows.Forms.TabPage()
         Me.tpDetay = New System.Windows.Forms.TabPage()
         Me.gbBelgeBilgileri = New System.Windows.Forms.GroupBox()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.cmbBelgeTipi = New System.Windows.Forms.ComboBox()
+        Me.lblTarih = New System.Windows.Forms.Label()
+        Me.txtTarih = New System.Windows.Forms.TextBox()
         Me.lblBelgeTipi = New System.Windows.Forms.Label()
-        Me.txtBelgeTipi = New System.Windows.Forms.TextBox()
         Me.lblBelgeSeri = New System.Windows.Forms.Label()
         Me.txtBelgeSeri = New System.Windows.Forms.TextBox()
         Me.txtBelgeNo = New System.Windows.Forms.TextBox()
-        Me.lblCariKodu = New System.Windows.Forms.Label()
-        Me.txtCariKodu = New System.Windows.Forms.TextBox()
-        Me.lblCariAdi = New System.Windows.Forms.Label()
-        Me.txtCariAdi = New System.Windows.Forms.TextBox()
         Me.lblAciklama = New System.Windows.Forms.Label()
         Me.txtAciklama = New System.Windows.Forms.TextBox()
         Me.gbBakiye = New System.Windows.Forms.GroupBox()
@@ -50,12 +49,15 @@ Partial Class frmTahsilat
         Me.txtKasaKodu = New System.Windows.Forms.TextBox()
         Me.lblTutar = New System.Windows.Forms.Label()
         Me.txtTutar = New System.Windows.Forms.TextBox()
-        Me.lblSlash = New System.Windows.Forms.Label()
-        Me.Splitter1 = New System.Windows.Forms.Splitter()
         Me.btnYeniKayit = New System.Windows.Forms.Button()
         Me.btnSil = New System.Windows.Forms.Button()
         Me.btnKaydet = New System.Windows.Forms.Button()
         Me.btnCikis = New System.Windows.Forms.Button()
+        Me.lblKod = New System.Windows.Forms.Label()
+        Me.txtKod = New System.Windows.Forms.TextBox()
+        Me.lblAd = New System.Windows.Forms.Label()
+        Me.txtAd = New System.Windows.Forms.TextBox()
+        Me.btnGetir = New System.Windows.Forms.Button()
         CType(Me.dgvTahsilat, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.tcTahsilat.SuspendLayout()
         Me.tpListe.SuspendLayout()
@@ -67,11 +69,13 @@ Partial Class frmTahsilat
         '
         'dgvTahsilat
         '
+        Me.dgvTahsilat.AllowUserToAddRows = False
+        Me.dgvTahsilat.AllowUserToDeleteRows = False
         Me.dgvTahsilat.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgvTahsilat.Dock = System.Windows.Forms.DockStyle.Fill
         Me.dgvTahsilat.Location = New System.Drawing.Point(3, 3)
         Me.dgvTahsilat.Name = "dgvTahsilat"
-        Me.dgvTahsilat.Size = New System.Drawing.Size(655, 441)
+        Me.dgvTahsilat.Size = New System.Drawing.Size(655, 450)
         Me.dgvTahsilat.TabIndex = 61
         '
         'tcTahsilat
@@ -79,20 +83,20 @@ Partial Class frmTahsilat
         Me.tcTahsilat.Controls.Add(Me.tpListe)
         Me.tcTahsilat.Controls.Add(Me.tpDetay)
         Me.tcTahsilat.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.tcTahsilat.Font = New System.Drawing.Font("Arial", 11.25!, System.Drawing.FontStyle.Bold)
-        Me.tcTahsilat.Location = New System.Drawing.Point(0, 63)
+        Me.tcTahsilat.Font = New System.Drawing.Font("Arial", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(162, Byte))
+        Me.tcTahsilat.Location = New System.Drawing.Point(0, 73)
         Me.tcTahsilat.Name = "tcTahsilat"
         Me.tcTahsilat.SelectedIndex = 0
-        Me.tcTahsilat.Size = New System.Drawing.Size(669, 496)
+        Me.tcTahsilat.Size = New System.Drawing.Size(669, 486)
         Me.tcTahsilat.TabIndex = 62
         '
         'tpListe
         '
         Me.tpListe.Controls.Add(Me.dgvTahsilat)
-        Me.tpListe.Location = New System.Drawing.Point(4, 27)
+        Me.tpListe.Location = New System.Drawing.Point(4, 26)
         Me.tpListe.Name = "tpListe"
         Me.tpListe.Padding = New System.Windows.Forms.Padding(3)
-        Me.tpListe.Size = New System.Drawing.Size(661, 447)
+        Me.tpListe.Size = New System.Drawing.Size(661, 456)
         Me.tpListe.TabIndex = 0
         Me.tpListe.Text = "Liste"
         Me.tpListe.UseVisualStyleBackColor = True
@@ -105,7 +109,7 @@ Partial Class frmTahsilat
         Me.tpDetay.Location = New System.Drawing.Point(4, 27)
         Me.tpDetay.Name = "tpDetay"
         Me.tpDetay.Padding = New System.Windows.Forms.Padding(3)
-        Me.tpDetay.Size = New System.Drawing.Size(661, 465)
+        Me.tpDetay.Size = New System.Drawing.Size(661, 455)
         Me.tpDetay.TabIndex = 1
         Me.tpDetay.Text = "Detay"
         Me.tpDetay.UseVisualStyleBackColor = True
@@ -113,16 +117,14 @@ Partial Class frmTahsilat
         'gbBelgeBilgileri
         '
         Me.gbBelgeBilgileri.BackColor = System.Drawing.Color.LightCyan
-        Me.gbBelgeBilgileri.Controls.Add(Me.lblSlash)
+        Me.gbBelgeBilgileri.Controls.Add(Me.Label1)
+        Me.gbBelgeBilgileri.Controls.Add(Me.cmbBelgeTipi)
+        Me.gbBelgeBilgileri.Controls.Add(Me.lblTarih)
+        Me.gbBelgeBilgileri.Controls.Add(Me.txtTarih)
         Me.gbBelgeBilgileri.Controls.Add(Me.lblBelgeTipi)
-        Me.gbBelgeBilgileri.Controls.Add(Me.txtBelgeTipi)
         Me.gbBelgeBilgileri.Controls.Add(Me.lblBelgeSeri)
         Me.gbBelgeBilgileri.Controls.Add(Me.txtBelgeSeri)
         Me.gbBelgeBilgileri.Controls.Add(Me.txtBelgeNo)
-        Me.gbBelgeBilgileri.Controls.Add(Me.lblCariKodu)
-        Me.gbBelgeBilgileri.Controls.Add(Me.txtCariKodu)
-        Me.gbBelgeBilgileri.Controls.Add(Me.lblCariAdi)
-        Me.gbBelgeBilgileri.Controls.Add(Me.txtCariAdi)
         Me.gbBelgeBilgileri.Controls.Add(Me.lblAciklama)
         Me.gbBelgeBilgileri.Controls.Add(Me.txtAciklama)
         Me.gbBelgeBilgileri.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(162, Byte))
@@ -132,6 +134,47 @@ Partial Class frmTahsilat
         Me.gbBelgeBilgileri.TabIndex = 61
         Me.gbBelgeBilgileri.TabStop = False
         Me.gbBelgeBilgileri.Text = "Belge Bilgileri"
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Arial", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(162, Byte))
+        Me.Label1.Location = New System.Drawing.Point(54, 73)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(67, 17)
+        Me.Label1.TabIndex = 52
+        Me.Label1.Text = "Belge No"
+        '
+        'cmbBelgeTipi
+        '
+        Me.cmbBelgeTipi.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cmbBelgeTipi.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(162, Byte))
+        Me.cmbBelgeTipi.FormattingEnabled = True
+        Me.cmbBelgeTipi.Items.AddRange(New Object() {"TAHSİLAT", "TEDİYE"})
+        Me.cmbBelgeTipi.Location = New System.Drawing.Point(127, 18)
+        Me.cmbBelgeTipi.Name = "cmbBelgeTipi"
+        Me.cmbBelgeTipi.Size = New System.Drawing.Size(82, 23)
+        Me.cmbBelgeTipi.TabIndex = 51
+        Me.cmbBelgeTipi.TabStop = False
+        '
+        'lblTarih
+        '
+        Me.lblTarih.AutoSize = True
+        Me.lblTarih.Font = New System.Drawing.Font("Arial", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(162, Byte))
+        Me.lblTarih.Location = New System.Drawing.Point(82, 99)
+        Me.lblTarih.Name = "lblTarih"
+        Me.lblTarih.Size = New System.Drawing.Size(39, 17)
+        Me.lblTarih.TabIndex = 50
+        Me.lblTarih.Text = "Tarih"
+        '
+        'txtTarih
+        '
+        Me.txtTarih.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(162, Byte))
+        Me.txtTarih.Location = New System.Drawing.Point(127, 99)
+        Me.txtTarih.MaxLength = 10
+        Me.txtTarih.Name = "txtTarih"
+        Me.txtTarih.Size = New System.Drawing.Size(101, 20)
+        Me.txtTarih.TabIndex = 49
         '
         'lblBelgeTipi
         '
@@ -143,29 +186,20 @@ Partial Class frmTahsilat
         Me.lblBelgeTipi.TabIndex = 32
         Me.lblBelgeTipi.Text = "Belge Tipi"
         '
-        'txtBelgeTipi
-        '
-        Me.txtBelgeTipi.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(162, Byte))
-        Me.txtBelgeTipi.Location = New System.Drawing.Point(127, 16)
-        Me.txtBelgeTipi.MaxLength = 30
-        Me.txtBelgeTipi.Name = "txtBelgeTipi"
-        Me.txtBelgeTipi.Size = New System.Drawing.Size(151, 20)
-        Me.txtBelgeTipi.TabIndex = 29
-        '
         'lblBelgeSeri
         '
         Me.lblBelgeSeri.AutoSize = True
         Me.lblBelgeSeri.Font = New System.Drawing.Font("Arial", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(162, Byte))
-        Me.lblBelgeSeri.Location = New System.Drawing.Point(16, 44)
+        Me.lblBelgeSeri.Location = New System.Drawing.Point(46, 47)
         Me.lblBelgeSeri.Name = "lblBelgeSeri"
-        Me.lblBelgeSeri.Size = New System.Drawing.Size(105, 17)
+        Me.lblBelgeSeri.Size = New System.Drawing.Size(75, 17)
         Me.lblBelgeSeri.TabIndex = 35
-        Me.lblBelgeSeri.Text = "Belge Seri / No"
+        Me.lblBelgeSeri.Text = "Belge Seri"
         '
         'txtBelgeSeri
         '
         Me.txtBelgeSeri.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(162, Byte))
-        Me.txtBelgeSeri.Location = New System.Drawing.Point(127, 44)
+        Me.txtBelgeSeri.Location = New System.Drawing.Point(127, 47)
         Me.txtBelgeSeri.MaxLength = 10
         Me.txtBelgeSeri.Name = "txtBelgeSeri"
         Me.txtBelgeSeri.Size = New System.Drawing.Size(26, 20)
@@ -174,55 +208,17 @@ Partial Class frmTahsilat
         'txtBelgeNo
         '
         Me.txtBelgeNo.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(162, Byte))
-        Me.txtBelgeNo.Location = New System.Drawing.Point(177, 44)
+        Me.txtBelgeNo.Location = New System.Drawing.Point(127, 73)
         Me.txtBelgeNo.MaxLength = 4
         Me.txtBelgeNo.Name = "txtBelgeNo"
         Me.txtBelgeNo.Size = New System.Drawing.Size(101, 20)
         Me.txtBelgeNo.TabIndex = 37
         '
-        'lblCariKodu
-        '
-        Me.lblCariKodu.AutoSize = True
-        Me.lblCariKodu.Font = New System.Drawing.Font("Arial", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(162, Byte))
-        Me.lblCariKodu.Location = New System.Drawing.Point(48, 70)
-        Me.lblCariKodu.Name = "lblCariKodu"
-        Me.lblCariKodu.Size = New System.Drawing.Size(73, 17)
-        Me.lblCariKodu.TabIndex = 39
-        Me.lblCariKodu.Text = "Cari Kodu"
-        '
-        'txtCariKodu
-        '
-        Me.txtCariKodu.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(162, Byte))
-        Me.txtCariKodu.Location = New System.Drawing.Point(127, 70)
-        Me.txtCariKodu.MaxLength = 50
-        Me.txtCariKodu.Name = "txtCariKodu"
-        Me.txtCariKodu.Size = New System.Drawing.Size(132, 20)
-        Me.txtCariKodu.TabIndex = 45
-        '
-        'lblCariAdi
-        '
-        Me.lblCariAdi.AutoSize = True
-        Me.lblCariAdi.Font = New System.Drawing.Font("Arial", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(162, Byte))
-        Me.lblCariAdi.Location = New System.Drawing.Point(63, 96)
-        Me.lblCariAdi.Name = "lblCariAdi"
-        Me.lblCariAdi.Size = New System.Drawing.Size(58, 17)
-        Me.lblCariAdi.TabIndex = 43
-        Me.lblCariAdi.Text = "Cari Adı"
-        '
-        'txtCariAdi
-        '
-        Me.txtCariAdi.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(162, Byte))
-        Me.txtCariAdi.Location = New System.Drawing.Point(127, 96)
-        Me.txtCariAdi.MaxLength = 3
-        Me.txtCariAdi.Name = "txtCariAdi"
-        Me.txtCariAdi.Size = New System.Drawing.Size(271, 20)
-        Me.txtCariAdi.TabIndex = 41
-        '
         'lblAciklama
         '
         Me.lblAciklama.AutoSize = True
         Me.lblAciklama.Font = New System.Drawing.Font("Arial", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(162, Byte))
-        Me.lblAciklama.Location = New System.Drawing.Point(54, 122)
+        Me.lblAciklama.Location = New System.Drawing.Point(54, 125)
         Me.lblAciklama.Name = "lblAciklama"
         Me.lblAciklama.Size = New System.Drawing.Size(67, 17)
         Me.lblAciklama.TabIndex = 47
@@ -231,10 +227,11 @@ Partial Class frmTahsilat
         'txtAciklama
         '
         Me.txtAciklama.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(162, Byte))
-        Me.txtAciklama.Location = New System.Drawing.Point(127, 122)
+        Me.txtAciklama.Location = New System.Drawing.Point(127, 125)
         Me.txtAciklama.MaxLength = 10
+        Me.txtAciklama.Multiline = True
         Me.txtAciklama.Name = "txtAciklama"
-        Me.txtAciklama.Size = New System.Drawing.Size(271, 20)
+        Me.txtAciklama.Size = New System.Drawing.Size(258, 63)
         Me.txtAciklama.TabIndex = 30
         '
         'gbBakiye
@@ -365,25 +362,6 @@ Partial Class frmTahsilat
         Me.txtTutar.Size = New System.Drawing.Size(97, 20)
         Me.txtTutar.TabIndex = 56
         '
-        'lblSlash
-        '
-        Me.lblSlash.AutoSize = True
-        Me.lblSlash.Location = New System.Drawing.Point(159, 47)
-        Me.lblSlash.Name = "lblSlash"
-        Me.lblSlash.Size = New System.Drawing.Size(10, 14)
-        Me.lblSlash.TabIndex = 48
-        Me.lblSlash.Text = "/"
-        '
-        'Splitter1
-        '
-        Me.Splitter1.Cursor = System.Windows.Forms.Cursors.Arrow
-        Me.Splitter1.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Splitter1.Location = New System.Drawing.Point(0, 0)
-        Me.Splitter1.Name = "Splitter1"
-        Me.Splitter1.Size = New System.Drawing.Size(669, 57)
-        Me.Splitter1.TabIndex = 67
-        Me.Splitter1.TabStop = False
-        '
         'btnYeniKayit
         '
         Me.btnYeniKayit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
@@ -448,17 +426,75 @@ Partial Class frmTahsilat
         Me.btnCikis.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.btnCikis.UseVisualStyleBackColor = True
         '
+        'lblKod
+        '
+        Me.lblKod.AutoSize = True
+        Me.lblKod.Font = New System.Drawing.Font("Arial", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(162, Byte))
+        Me.lblKod.Location = New System.Drawing.Point(27, 19)
+        Me.lblKod.Name = "lblKod"
+        Me.lblKod.Size = New System.Drawing.Size(34, 17)
+        Me.lblKod.TabIndex = 72
+        Me.lblKod.Text = "Kod"
+        '
+        'txtKod
+        '
+        Me.txtKod.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(162, Byte))
+        Me.txtKod.Location = New System.Drawing.Point(67, 19)
+        Me.txtKod.MaxLength = 50
+        Me.txtKod.Name = "txtKod"
+        Me.txtKod.Size = New System.Drawing.Size(132, 20)
+        Me.txtKod.TabIndex = 75
+        '
+        'lblAd
+        '
+        Me.lblAd.AutoSize = True
+        Me.lblAd.Font = New System.Drawing.Font("Arial", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(162, Byte))
+        Me.lblAd.Location = New System.Drawing.Point(32, 45)
+        Me.lblAd.Name = "lblAd"
+        Me.lblAd.Size = New System.Drawing.Size(25, 17)
+        Me.lblAd.TabIndex = 74
+        Me.lblAd.Text = "Ad"
+        '
+        'txtAd
+        '
+        Me.txtAd.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(162, Byte))
+        Me.txtAd.Location = New System.Drawing.Point(67, 45)
+        Me.txtAd.MaxLength = 3
+        Me.txtAd.Name = "txtAd"
+        Me.txtAd.Size = New System.Drawing.Size(202, 20)
+        Me.txtAd.TabIndex = 73
+        '
+        'btnGetir
+        '
+        Me.btnGetir.BackColor = System.Drawing.Color.Transparent
+        Me.btnGetir.BackgroundImage = Global.Cari_Ekranı.My.Resources.Resources._313_search1
+        Me.btnGetir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.btnGetir.FlatAppearance.BorderColor = System.Drawing.Color.PaleTurquoise
+        Me.btnGetir.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent
+        Me.btnGetir.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
+        Me.btnGetir.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnGetir.Font = New System.Drawing.Font("Arial", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(162, Byte))
+        Me.btnGetir.Location = New System.Drawing.Point(205, 16)
+        Me.btnGetir.Name = "btnGetir"
+        Me.btnGetir.Size = New System.Drawing.Size(24, 24)
+        Me.btnGetir.TabIndex = 53
+        Me.btnGetir.UseVisualStyleBackColor = False
+        '
         'frmTahsilat
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 14.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.MediumTurquoise
         Me.ClientSize = New System.Drawing.Size(669, 559)
+        Me.Controls.Add(Me.btnGetir)
+        Me.Controls.Add(Me.lblKod)
+        Me.Controls.Add(Me.txtKod)
+        Me.Controls.Add(Me.lblAd)
+        Me.Controls.Add(Me.txtAd)
         Me.Controls.Add(Me.btnYeniKayit)
         Me.Controls.Add(Me.btnSil)
         Me.Controls.Add(Me.btnKaydet)
         Me.Controls.Add(Me.btnCikis)
-        Me.Controls.Add(Me.Splitter1)
         Me.Controls.Add(Me.tcTahsilat)
         Me.Font = New System.Drawing.Font("Arial", 8.25!)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
@@ -476,6 +512,7 @@ Partial Class frmTahsilat
         Me.gbTutar.ResumeLayout(False)
         Me.gbTutar.PerformLayout()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
 
@@ -485,14 +522,9 @@ Partial Class frmTahsilat
     Friend WithEvents tpDetay As TabPage
     Friend WithEvents gbBelgeBilgileri As GroupBox
     Friend WithEvents lblBelgeTipi As Label
-    Friend WithEvents txtBelgeTipi As TextBox
     Friend WithEvents lblBelgeSeri As Label
     Friend WithEvents txtBelgeSeri As TextBox
     Friend WithEvents txtBelgeNo As TextBox
-    Friend WithEvents lblCariKodu As Label
-    Friend WithEvents txtCariKodu As TextBox
-    Friend WithEvents lblCariAdi As Label
-    Friend WithEvents txtCariAdi As TextBox
     Friend WithEvents lblAciklama As Label
     Friend WithEvents txtAciklama As TextBox
     Friend WithEvents gbBakiye As GroupBox
@@ -507,10 +539,17 @@ Partial Class frmTahsilat
     Friend WithEvents txtKasaKodu As TextBox
     Friend WithEvents lblTutar As Label
     Friend WithEvents txtTutar As TextBox
-    Friend WithEvents lblSlash As Label
-    Friend WithEvents Splitter1 As Splitter
     Friend WithEvents btnYeniKayit As Button
     Friend WithEvents btnSil As Button
     Friend WithEvents btnKaydet As Button
     Friend WithEvents btnCikis As Button
+    Friend WithEvents cmbBelgeTipi As ComboBox
+    Friend WithEvents lblTarih As Label
+    Friend WithEvents txtTarih As TextBox
+    Friend WithEvents Label1 As Label
+    Friend WithEvents lblKod As Label
+    Friend WithEvents txtKod As TextBox
+    Friend WithEvents lblAd As Label
+    Friend WithEvents txtAd As TextBox
+    Friend WithEvents btnGetir As Button
 End Class

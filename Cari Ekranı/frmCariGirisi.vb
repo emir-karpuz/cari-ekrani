@@ -1,7 +1,8 @@
 ﻿Public Class frmCariGirisi
 
     Private Sub btnYeniKayit_Click(sender As Object, e As EventArgs) Handles btnYeniKayit.Click
-        ClearTextBox(Me)
+        tcCariAnaBilgi.SelectedTab = tpDetay
+        ClearTextBoxes.ClearTextBox(Me)
     End Sub
 
     Private Sub btnKaydet_Click(sender As Object, e As EventArgs) Handles btnKaydet.Click
@@ -22,7 +23,7 @@
                                    '" & txtCepNo.Text & "', '" & txtVergiDaire.Text & "', '" & txtVergiNo.Text & "', '" & txtOdemeNotu.Text & "', '" & txtMuhHesapNo.Text & "',
                                    '" & txtTC.Text & "', '" & txtHesapNo.Text & "', '" & txtIBAN.Text & "', '" & txtBankaKodu.Text & "', '" & txtSubeKodu.Text & "')")
                     MessageBox.Show("Kayıt başarıyla oluşturuldu.", "Info")
-                    ClearTextBox(Me)
+                    ClearTextBoxes.ClearTextBox(Me)
                 Catch ex As Exception
                     MessageBox.Show("Hata oluştu: " & ex.Message & Environment.NewLine & ex.StackTrace, "Error")
                 End Try
@@ -50,7 +51,7 @@
                                                      WHERE Kod = '" & txtKod.Text & "'")
 
                     MessageBox.Show("Kayıt başarıyla güncellendi.", "Info")
-                    ClearTextBox(Me)
+                    ClearTextBoxes.ClearTextBox(Me)
                 Catch ex As Exception
                     MessageBox.Show("Hata oluştu: " & ex.Message & Environment.NewLine & ex.StackTrace, "Error")
                 End Try
@@ -58,13 +59,11 @@
         Else
             MessageBox.Show("Kod bölgesi boş bırakılamaz", "Error")
         End If
-
-
-
     End Sub
 
     Private Sub btnGetir_Click(sender As Object, e As EventArgs) Handles btnGetir.Click
         Dim frmGridView As New frmGridView
+        frmGridView.tablo = "CarAna"
         frmGridView.ShowDialog()
 
         If frmGridView.row.Index <> -1 Then
@@ -95,7 +94,7 @@
         Try
             SQLQuery.cmdDataTable("DELETE FROM CarAna WHERE Kod = '" & txtKod.Text & "'")
             MessageBox.Show("Silme işlemi başarıyla tamamlandı", "Info")
-            ClearTextBox(Me)
+            ClearTextBoxes.ClearTextBox(Me)
         Catch ex As Exception
             MessageBox.Show("Silme sırasında hata oluştu: " & ex.Message, "Error")
         End Try
@@ -105,28 +104,19 @@
         Close()
     End Sub
 
-    Public Sub ClearTextBox(ByVal root As Control)
-        For Each ctrl As Control In root.Controls
-            ClearTextBox(ctrl)
-            If TypeOf ctrl Is TextBox Then
-                CType(ctrl, TextBox).Text = String.Empty
-            End If
-        Next ctrl
-    End Sub
-
     Private Sub frmCariGirisi_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        dgwKayitlar.DataSource = SQLQuery.cmdDataTable("SELECT Kod, Ad, Adres, Semt, PostaKodu, KapiNo, Sehir, Ulke FROM CarAna(NOLOCK)")
+        dgvKayitlar.DataSource = SQLQuery.cmdDataTable("SELECT Kod, Ad, Adres, Semt, PostaKodu, KapiNo, Sehir, Ulke FROM CarAna(NOLOCK)")
     End Sub
 
-    Private Sub dgwKayitlar_DoubleClick(sender As Object, e As EventArgs) Handles dgwKayitlar.DoubleClick
-        txtKod.Text = dgwKayitlar.CurrentRow.Cells(0).Value.ToString
-        txtAd.Text = dgwKayitlar.CurrentRow.Cells(1).Value.ToString
-        txtAdres.Text = dgwKayitlar.CurrentRow.Cells(2).Value.ToString
-        txtSemt.Text = dgwKayitlar.CurrentRow.Cells(3).Value.ToString
-        txtPostaKodu.Text = dgwKayitlar.CurrentRow.Cells(4).Value.ToString
-        txtKapiNo.Text = dgwKayitlar.CurrentRow.Cells(5).Value.ToString
-        cmbSehir.Text = dgwKayitlar.CurrentRow.Cells(6).Value.ToString
-        txtUlke.Text = dgwKayitlar.CurrentRow.Cells(7).Value.ToString
+    Private Sub dgwKayitlar_DoubleClick(sender As Object, e As EventArgs) Handles dgvKayitlar.DoubleClick
+        txtKod.Text = dgvKayitlar.CurrentRow.Cells(0).Value.ToString
+        txtAd.Text = dgvKayitlar.CurrentRow.Cells(1).Value.ToString
+        txtAdres.Text = dgvKayitlar.CurrentRow.Cells(2).Value.ToString
+        txtSemt.Text = dgvKayitlar.CurrentRow.Cells(3).Value.ToString
+        txtPostaKodu.Text = dgvKayitlar.CurrentRow.Cells(4).Value.ToString
+        txtKapiNo.Text = dgvKayitlar.CurrentRow.Cells(5).Value.ToString
+        cmbSehir.Text = dgvKayitlar.CurrentRow.Cells(6).Value.ToString
+        txtUlke.Text = dgvKayitlar.CurrentRow.Cells(7).Value.ToString
         tcCariAnaBilgi.SelectedTab = tpDetay
     End Sub
 End Class
