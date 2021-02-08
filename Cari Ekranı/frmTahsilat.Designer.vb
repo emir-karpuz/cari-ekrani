@@ -139,11 +139,11 @@ Partial Class frmTahsilat
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Arial", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(162, Byte))
-        Me.Label1.Location = New System.Drawing.Point(54, 73)
+        Me.Label1.Location = New System.Drawing.Point(44, 73)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(67, 17)
+        Me.Label1.Size = New System.Drawing.Size(77, 17)
         Me.Label1.TabIndex = 52
-        Me.Label1.Text = "Belge No"
+        Me.Label1.Text = "Belge No *"
         '
         'cmbBelgeTipi
         '
@@ -161,31 +161,31 @@ Partial Class frmTahsilat
         '
         Me.lblTarih.AutoSize = True
         Me.lblTarih.Font = New System.Drawing.Font("Arial", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(162, Byte))
-        Me.lblTarih.Location = New System.Drawing.Point(82, 101)
+        Me.lblTarih.Location = New System.Drawing.Point(72, 101)
         Me.lblTarih.Name = "lblTarih"
-        Me.lblTarih.Size = New System.Drawing.Size(39, 17)
+        Me.lblTarih.Size = New System.Drawing.Size(49, 17)
         Me.lblTarih.TabIndex = 50
-        Me.lblTarih.Text = "Tarih"
+        Me.lblTarih.Text = "Tarih *"
         '
         'lblBelgeTipi
         '
         Me.lblBelgeTipi.AutoSize = True
         Me.lblBelgeTipi.Font = New System.Drawing.Font("Arial", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(162, Byte))
-        Me.lblBelgeTipi.Location = New System.Drawing.Point(50, 19)
+        Me.lblBelgeTipi.Location = New System.Drawing.Point(40, 19)
         Me.lblBelgeTipi.Name = "lblBelgeTipi"
-        Me.lblBelgeTipi.Size = New System.Drawing.Size(71, 17)
+        Me.lblBelgeTipi.Size = New System.Drawing.Size(81, 17)
         Me.lblBelgeTipi.TabIndex = 32
-        Me.lblBelgeTipi.Text = "Belge Tipi"
+        Me.lblBelgeTipi.Text = "Belge Tipi *"
         '
         'lblBelgeSeri
         '
         Me.lblBelgeSeri.AutoSize = True
         Me.lblBelgeSeri.Font = New System.Drawing.Font("Arial", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(162, Byte))
-        Me.lblBelgeSeri.Location = New System.Drawing.Point(46, 47)
+        Me.lblBelgeSeri.Location = New System.Drawing.Point(36, 47)
         Me.lblBelgeSeri.Name = "lblBelgeSeri"
-        Me.lblBelgeSeri.Size = New System.Drawing.Size(75, 17)
+        Me.lblBelgeSeri.Size = New System.Drawing.Size(85, 17)
         Me.lblBelgeSeri.TabIndex = 35
-        Me.lblBelgeSeri.Text = "Belge Seri"
+        Me.lblBelgeSeri.Text = "Belge Seri *"
         '
         'txtBelgeSeri
         '
@@ -424,11 +424,11 @@ Partial Class frmTahsilat
         '
         Me.lblKod.AutoSize = True
         Me.lblKod.Font = New System.Drawing.Font("Arial", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(162, Byte))
-        Me.lblKod.Location = New System.Drawing.Point(27, 19)
+        Me.lblKod.Location = New System.Drawing.Point(17, 19)
         Me.lblKod.Name = "lblKod"
-        Me.lblKod.Size = New System.Drawing.Size(34, 17)
+        Me.lblKod.Size = New System.Drawing.Size(44, 17)
         Me.lblKod.TabIndex = 72
-        Me.lblKod.Text = "Kod"
+        Me.lblKod.Text = "Kod *"
         '
         'txtKod
         '
@@ -443,7 +443,7 @@ Partial Class frmTahsilat
         '
         Me.lblAd.AutoSize = True
         Me.lblAd.Font = New System.Drawing.Font("Arial", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(162, Byte))
-        Me.lblAd.Location = New System.Drawing.Point(32, 45)
+        Me.lblAd.Location = New System.Drawing.Point(36, 45)
         Me.lblAd.Name = "lblAd"
         Me.lblAd.Size = New System.Drawing.Size(25, 17)
         Me.lblAd.TabIndex = 74
@@ -476,6 +476,8 @@ Partial Class frmTahsilat
         '
         'dtpTarih
         '
+        Me.dtpTarih.CustomFormat = "yyyy/MM/dd"
+        Me.dtpTarih.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
         Me.dtpTarih.Location = New System.Drawing.Point(127, 99)
         Me.dtpTarih.MaxDate = New Date(3000, 12, 31, 0, 0, 0, 0)
         Me.dtpTarih.MinDate = New Date(1989, 1, 1, 0, 0, 0, 0)

@@ -30,6 +30,7 @@
 
     Private Sub frmAnaMenu_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Controls.OfType(Of MdiClient).FirstOrDefault.BackColor = Color.FromArgb(255, 255, 255)
+        tvYanMenu.ExpandAll()
     End Sub
 
     Private Sub menuDock(frm As Form)
