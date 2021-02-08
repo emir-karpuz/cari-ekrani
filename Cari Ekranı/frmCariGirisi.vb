@@ -24,6 +24,7 @@
                                    '" & txtTC.Text & "', '" & txtHesapNo.Text & "', '" & txtIBAN.Text & "', '" & txtBankaKodu.Text & "', '" & txtSubeKodu.Text & "')")
                     MessageBox.Show("Kayıt başarıyla oluşturuldu.", "Info")
                     ClearTextBoxes.ClearTextBox(Me)
+                    dgvKayitlar.DataSource = SQLQuery.cmdDataTable("SELECT Kod, Ad, Adres, Semt, PostaKodu, KapiNo, Sehir, Ulke FROM CarAna(NOLOCK)")
                 Catch ex As Exception
                     MessageBox.Show("Hata oluştu: " & ex.Message & Environment.NewLine & ex.StackTrace, "Error")
                 End Try
@@ -52,6 +53,7 @@
 
                     MessageBox.Show("Kayıt başarıyla güncellendi.", "Info")
                     ClearTextBoxes.ClearTextBox(Me)
+                    dgvKayitlar.DataSource = SQLQuery.cmdDataTable("SELECT Kod, Ad, Adres, Semt, PostaKodu, KapiNo, Sehir, Ulke FROM CarAna(NOLOCK)")
                 Catch ex As Exception
                     MessageBox.Show("Hata oluştu: " & ex.Message & Environment.NewLine & ex.StackTrace, "Error")
                 End Try

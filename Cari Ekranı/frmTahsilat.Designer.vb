@@ -30,7 +30,6 @@ Partial Class frmTahsilat
         Me.Label1 = New System.Windows.Forms.Label()
         Me.cmbBelgeTipi = New System.Windows.Forms.ComboBox()
         Me.lblTarih = New System.Windows.Forms.Label()
-        Me.txtTarih = New System.Windows.Forms.TextBox()
         Me.lblBelgeTipi = New System.Windows.Forms.Label()
         Me.lblBelgeSeri = New System.Windows.Forms.Label()
         Me.txtBelgeSeri = New System.Windows.Forms.TextBox()
@@ -58,6 +57,7 @@ Partial Class frmTahsilat
         Me.lblAd = New System.Windows.Forms.Label()
         Me.txtAd = New System.Windows.Forms.TextBox()
         Me.btnGetir = New System.Windows.Forms.Button()
+        Me.dtpTarih = New System.Windows.Forms.DateTimePicker()
         CType(Me.dgvTahsilat, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.tcTahsilat.SuspendLayout()
         Me.tpListe.SuspendLayout()
@@ -106,10 +106,10 @@ Partial Class frmTahsilat
         Me.tpDetay.Controls.Add(Me.gbBelgeBilgileri)
         Me.tpDetay.Controls.Add(Me.gbBakiye)
         Me.tpDetay.Controls.Add(Me.gbTutar)
-        Me.tpDetay.Location = New System.Drawing.Point(4, 27)
+        Me.tpDetay.Location = New System.Drawing.Point(4, 26)
         Me.tpDetay.Name = "tpDetay"
         Me.tpDetay.Padding = New System.Windows.Forms.Padding(3)
-        Me.tpDetay.Size = New System.Drawing.Size(661, 455)
+        Me.tpDetay.Size = New System.Drawing.Size(661, 456)
         Me.tpDetay.TabIndex = 1
         Me.tpDetay.Text = "Detay"
         Me.tpDetay.UseVisualStyleBackColor = True
@@ -117,10 +117,10 @@ Partial Class frmTahsilat
         'gbBelgeBilgileri
         '
         Me.gbBelgeBilgileri.BackColor = System.Drawing.Color.LightCyan
+        Me.gbBelgeBilgileri.Controls.Add(Me.dtpTarih)
         Me.gbBelgeBilgileri.Controls.Add(Me.Label1)
         Me.gbBelgeBilgileri.Controls.Add(Me.cmbBelgeTipi)
         Me.gbBelgeBilgileri.Controls.Add(Me.lblTarih)
-        Me.gbBelgeBilgileri.Controls.Add(Me.txtTarih)
         Me.gbBelgeBilgileri.Controls.Add(Me.lblBelgeTipi)
         Me.gbBelgeBilgileri.Controls.Add(Me.lblBelgeSeri)
         Me.gbBelgeBilgileri.Controls.Add(Me.txtBelgeSeri)
@@ -161,20 +161,11 @@ Partial Class frmTahsilat
         '
         Me.lblTarih.AutoSize = True
         Me.lblTarih.Font = New System.Drawing.Font("Arial", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(162, Byte))
-        Me.lblTarih.Location = New System.Drawing.Point(82, 99)
+        Me.lblTarih.Location = New System.Drawing.Point(82, 101)
         Me.lblTarih.Name = "lblTarih"
         Me.lblTarih.Size = New System.Drawing.Size(39, 17)
         Me.lblTarih.TabIndex = 50
         Me.lblTarih.Text = "Tarih"
-        '
-        'txtTarih
-        '
-        Me.txtTarih.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(162, Byte))
-        Me.txtTarih.Location = New System.Drawing.Point(127, 99)
-        Me.txtTarih.MaxLength = 10
-        Me.txtTarih.Name = "txtTarih"
-        Me.txtTarih.Size = New System.Drawing.Size(101, 20)
-        Me.txtTarih.TabIndex = 49
         '
         'lblBelgeTipi
         '
@@ -254,10 +245,10 @@ Partial Class frmTahsilat
         'lblBakiye
         '
         Me.lblBakiye.AutoSize = True
-        Me.lblBakiye.Font = New System.Drawing.Font("Arial", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(162, Byte))
+        Me.lblBakiye.Font = New System.Drawing.Font("Arial", 11.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(162, Byte))
         Me.lblBakiye.Location = New System.Drawing.Point(15, 74)
         Me.lblBakiye.Name = "lblBakiye"
-        Me.lblBakiye.Size = New System.Drawing.Size(51, 17)
+        Me.lblBakiye.Size = New System.Drawing.Size(55, 18)
         Me.lblBakiye.TabIndex = 50
         Me.lblBakiye.Text = "Bakiye"
         '
@@ -267,6 +258,7 @@ Partial Class frmTahsilat
         Me.txtBakiye.Location = New System.Drawing.Point(72, 74)
         Me.txtBakiye.MaxLength = 4
         Me.txtBakiye.Name = "txtBakiye"
+        Me.txtBakiye.ReadOnly = True
         Me.txtBakiye.Size = New System.Drawing.Size(132, 20)
         Me.txtBakiye.TabIndex = 49
         '
@@ -286,6 +278,7 @@ Partial Class frmTahsilat
         Me.txtAlacak.Location = New System.Drawing.Point(72, 48)
         Me.txtAlacak.MaxLength = 4
         Me.txtAlacak.Name = "txtAlacak"
+        Me.txtAlacak.ReadOnly = True
         Me.txtAlacak.Size = New System.Drawing.Size(132, 20)
         Me.txtAlacak.TabIndex = 46
         '
@@ -305,6 +298,7 @@ Partial Class frmTahsilat
         Me.txtBorc.Location = New System.Drawing.Point(72, 22)
         Me.txtBorc.MaxLength = 4
         Me.txtBorc.Name = "txtBorc"
+        Me.txtBorc.ReadOnly = True
         Me.txtBorc.Size = New System.Drawing.Size(132, 20)
         Me.txtBorc.TabIndex = 42
         '
@@ -480,6 +474,15 @@ Partial Class frmTahsilat
         Me.btnGetir.TabIndex = 53
         Me.btnGetir.UseVisualStyleBackColor = False
         '
+        'dtpTarih
+        '
+        Me.dtpTarih.Location = New System.Drawing.Point(127, 99)
+        Me.dtpTarih.MaxDate = New Date(3000, 12, 31, 0, 0, 0, 0)
+        Me.dtpTarih.MinDate = New Date(1989, 1, 1, 0, 0, 0, 0)
+        Me.dtpTarih.Name = "dtpTarih"
+        Me.dtpTarih.Size = New System.Drawing.Size(181, 20)
+        Me.dtpTarih.TabIndex = 53
+        '
         'frmTahsilat
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 14.0!)
@@ -545,11 +548,11 @@ Partial Class frmTahsilat
     Friend WithEvents btnCikis As Button
     Friend WithEvents cmbBelgeTipi As ComboBox
     Friend WithEvents lblTarih As Label
-    Friend WithEvents txtTarih As TextBox
     Friend WithEvents Label1 As Label
     Friend WithEvents lblKod As Label
     Friend WithEvents txtKod As TextBox
     Friend WithEvents lblAd As Label
     Friend WithEvents txtAd As TextBox
     Friend WithEvents btnGetir As Button
+    Friend WithEvents dtpTarih As DateTimePicker
 End Class

@@ -20,7 +20,7 @@ Public Class SQLQuery
             sqlDataAdapter.Fill(dataTable)
             Return dataTable
         Catch ex As Exception
-            MessageBox.Show(ex.Message, "Error")
+            MessageBox.Show("SORGU HATASI: " & ex.Message & Environment.NewLine & ex.StackTrace, "Error")
         End Try
 
         connection.Close()
@@ -39,7 +39,7 @@ Public Class SQLQuery
             sqlCommand.Dispose()
 
         Catch ex As Exception
-            MessageBox.Show("SQL Query Hatası: " & ex.Message, "Error")
+            MessageBox.Show("SORGU HATASI: " & ex.Message & Environment.NewLine & ex.StackTrace, "Error")
         End Try
         connection.Close()
         Return Nothing
