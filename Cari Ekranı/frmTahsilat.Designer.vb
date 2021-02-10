@@ -27,6 +27,7 @@ Partial Class frmTahsilat
         Me.tpListe = New System.Windows.Forms.TabPage()
         Me.tpDetay = New System.Windows.Forms.TabPage()
         Me.gbBelgeBilgileri = New System.Windows.Forms.GroupBox()
+        Me.dtpTarih = New System.Windows.Forms.DateTimePicker()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.cmbBelgeTipi = New System.Windows.Forms.ComboBox()
         Me.lblTarih = New System.Windows.Forms.Label()
@@ -57,7 +58,6 @@ Partial Class frmTahsilat
         Me.lblAd = New System.Windows.Forms.Label()
         Me.txtAd = New System.Windows.Forms.TextBox()
         Me.btnGetir = New System.Windows.Forms.Button()
-        Me.dtpTarih = New System.Windows.Forms.DateTimePicker()
         CType(Me.dgvTahsilat, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.tcTahsilat.SuspendLayout()
         Me.tpListe.SuspendLayout()
@@ -134,6 +134,17 @@ Partial Class frmTahsilat
         Me.gbBelgeBilgileri.TabIndex = 61
         Me.gbBelgeBilgileri.TabStop = False
         Me.gbBelgeBilgileri.Text = "Belge Bilgileri"
+        '
+        'dtpTarih
+        '
+        Me.dtpTarih.CustomFormat = "yyyy/MM/dd"
+        Me.dtpTarih.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.dtpTarih.Location = New System.Drawing.Point(127, 99)
+        Me.dtpTarih.MaxDate = New Date(3000, 12, 31, 0, 0, 0, 0)
+        Me.dtpTarih.MinDate = New Date(1989, 1, 1, 0, 0, 0, 0)
+        Me.dtpTarih.Name = "dtpTarih"
+        Me.dtpTarih.Size = New System.Drawing.Size(181, 20)
+        Me.dtpTarih.TabIndex = 53
         '
         'Label1
         '
@@ -473,17 +484,6 @@ Partial Class frmTahsilat
         Me.btnGetir.Size = New System.Drawing.Size(24, 24)
         Me.btnGetir.TabIndex = 53
         Me.btnGetir.UseVisualStyleBackColor = False
-        '
-        'dtpTarih
-        '
-        Me.dtpTarih.CustomFormat = "yyyy/MM/dd"
-        Me.dtpTarih.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.dtpTarih.Location = New System.Drawing.Point(127, 99)
-        Me.dtpTarih.MaxDate = New Date(3000, 12, 31, 0, 0, 0, 0)
-        Me.dtpTarih.MinDate = New Date(1989, 1, 1, 0, 0, 0, 0)
-        Me.dtpTarih.Name = "dtpTarih"
-        Me.dtpTarih.Size = New System.Drawing.Size(181, 20)
-        Me.dtpTarih.TabIndex = 53
         '
         'frmTahsilat
         '

@@ -1,7 +1,8 @@
 ﻿Public Class frmTahsilat
     Private Sub frmTahsilat_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         dgvTahsilat.DataSource = SQLQuery.cmdDataTable("SELECT CarAna.Kod, Ad, BelgeTipi, BelgeSeri, BelgeNo, convert(nvarchar(20), Tarih, 104) 'Tarih', Aciklama, KasaKod, Borc, Alac 
-                                                                FROM CarHarDet INNER JOIN CarAna ON CarAna.Kod = CarHarDet.Kod")
+                                                                FROM CarHarDet INNER JOIN CarAna ON CarAna.Kod = CarHarDet.Kod 
+                                                                WHERE BelgeTipi = 'CarTahsil'")
     End Sub
 
     Private Sub btnCikis_Click(sender As Object, e As EventArgs) Handles btnCikis.Click
@@ -15,6 +16,8 @@
 
     Private Sub btnKaydet_Click(sender As Object, e As EventArgs) Handles btnKaydet.Click
 
+        Dim belgeTipi As String
+
         Dim recordID As Integer = SQLQuery.cmdFirstData("SELECT Kod FROM CarHarDet WHERE Kod = '" & txtKod.Text & "' AND 
                                                                                          BelgeTipi = '" & cmbBelgeTipi.Text & "' AND
                                                                                          BelgeSeri = '" & txtBelgeSeri.Text & "' AND
@@ -23,10 +26,16 @@
         If txtKod.Text <> String.Empty Or cmbBelgeTipi.Text <> Nothing Or txtBelgeSeri.Text <> String.Empty Or txtBelgeNo.Text <> String.Empty Then '(??)
             If recordID = 0 Then
                 Try
+                    If cmbBelgeTipi.Text = "TAHSİLAT" Then      'ComboBox'ın ValueMember ve DisplayMember özelliklerini kullan
+                        belgeTipi = "CarTahsil"
+                    Else
+                        belgeTipi = "CarTediye"
+                    End If
+
                     SQLQuery.cmdFirstData("INSERT INTO CarHarDet (BelgeTipi, BelgeSeri, BelgeNo, Tarih, Kod, Aciklama, KasaKod, Alac) 
-                                                  VALUES ('" & cmbBelgeTipi.Text & "', '" & txtBelgeSeri.Text & "', '" & txtBelgeNo.Text & "',
-                                                            '" & dtpTarih.Value.ToString("yyyy-MM-dd") & "', '" & txtKod.Text & "', '" & txtAciklama.Text & "',
-                                                             '" & txtKasaKodu.Text & "', '" & txtTutar.Text & "')")
+                                                  VALUES ('" & belgeTipi & "', '" & txtBelgeSeri.Text & "', '" & txtBelgeNo.Text & "',
+                                                            '" & dtpTarih.Value.ToString("yyyy-MM-dd") & "', '" & txtKod.Text & "',
+                                                                '" & txtAciklama.Text & "', '" & txtKasaKodu.Text & "', '" & txtTutar.Text & "')")
                     MessageBox.Show("Kayıt başarıyla oluşturuldu.", "Info")
                     frmTahsilat_Load(sender, e)
                 Catch ex As Exception

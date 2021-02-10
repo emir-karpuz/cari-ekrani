@@ -1,7 +1,7 @@
 ﻿Public Class frmAnaMenu
 
     Dim user As String
-    Dim connection As String
+    Public connection As String
 
     Private Sub tsAnaBilgiGirisi_Click(sender As Object, e As EventArgs) Handles tsAnaBilgiGirisi.Click
         menuDock(frmCariGirisi)
@@ -35,8 +35,6 @@
         Dim loginForm As New MEGAlogin.frmMEGAlogin
 
         loginForm.iniFileName = Application.StartupPath & "\" & "MEGA_KUR_SISTEM.INI"
-
-        'Main fonksiyonu hatalı kullanıcı adı aldığında dump alıyor.
 
         loginForm.Main()
 
