@@ -1,5 +1,8 @@
 ﻿Public Class frmAnaMenu
 
+    Dim user As String
+    Dim connection As String
+
     Private Sub tsAnaBilgiGirisi_Click(sender As Object, e As EventArgs) Handles tsAnaBilgiGirisi.Click
         menuDock(frmCariGirisi)
         frmCariGirisi.Show()
@@ -29,6 +32,21 @@
     End Sub
 
     Private Sub frmAnaMenu_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Dim loginForm As New MEGAlogin.frmMEGAlogin
+
+        loginForm.iniFileName = Application.StartupPath & "\" & "MEGA_KUR_SISTEM.INI"
+
+        'Main fonksiyonu hatalı kullanıcı adı aldığında dump alıyor.
+
+        loginForm.Main()
+
+        If loginForm.strConnFirma = String.Empty Then
+            Close()
+        End If
+
+        user = loginForm.strUser
+        connection = loginForm.strConnFirma
+
         Controls.OfType(Of MdiClient).FirstOrDefault.BackColor = Color.FromArgb(255, 255, 255)
         tvYanMenu.ExpandAll()
     End Sub

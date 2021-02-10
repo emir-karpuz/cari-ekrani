@@ -1,0 +1,1 @@
+09.02.2021 -> Login ekraný oluþturuldu.
